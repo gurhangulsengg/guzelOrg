@@ -726,17 +726,20 @@ function initLuxuryAmpersand() {
     if (node.nodeType === Node.TEXT_NODE) {
       if (node.nodeValue && node.nodeValue.includes('&')) {
         const parts = node.nodeValue.split('&');
-        const frag = document.createDocumentFragment();
+        const parentDisplay = node.parentElement ? window.getComputedStyle(node.parentElement).display : '';
+        const container = (parentDisplay.includes('flex') || parentDisplay.includes('grid'))
+          ? document.createElement('span')
+          : document.createDocumentFragment();
         parts.forEach((part, idx) => {
-          if (part) frag.appendChild(document.createTextNode(part));
+          if (part) container.appendChild(document.createTextNode(part));
           if (idx < parts.length - 1) {
             const ampSpan = document.createElement('span');
             ampSpan.className = 'amp';
             ampSpan.textContent = '&';
-            frag.appendChild(ampSpan);
+            container.appendChild(ampSpan);
           }
         });
-        node.parentNode.replaceChild(frag, node);
+        node.parentNode.replaceChild(container, node);
       }
     } else if (
       node.nodeType === Node.ELEMENT_NODE &&

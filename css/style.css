@@ -3567,6 +3567,513 @@ a:focus-visible, button:focus-visible {
   }
 }
 
+/* ==========================================================================
+   MOBILE RESPONSIVENESS, SMALL-SCREEN CENTERING & WIZARD GRID ALIGNMENT
+   ========================================================================== */
+
+/* 1. Quote Wizard Balanced 4x4 Grid & Centered Button Content */
+.wizard-container {
+  max-width: 860px;
+  text-align: center;
+}
+
+.wizard-step-label {
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: 0.88rem;
+  letter-spacing: 1.5px;
+}
+
+.wizard-options.wizard-options-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.wizard-option-btn {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  min-height: 84px;
+  padding: 14px 10px;
+  gap: 6px;
+}
+
+.wizard-option-icon {
+  display: block;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.wizard-option-label {
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 1.35;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.wizard-submit-wrap {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.wizard-submit-btn {
+  padding: 16px 36px;
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* 2. Centered Cards Across All Viewports (Why Us, Service Areas, Values, Stats) */
+.why-us-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-us-icon {
+  margin: 0 auto 22px;
+}
+
+.service-areas-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.service-area-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-area-header {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.value-card {
+  text-align: center;
+}
+
+.value-icon {
+  margin: 0 auto 20px !important;
+}
+
+.about-stats {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat,
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.stat-number,
+.stat-label {
+  display: block;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* 3. Tablet & Small Laptop Adjustments (<= 1024px) */
+@media (max-width: 1024px) {
+  .section-label {
+    padding-left: 0 !important;
+    text-align: center;
+  }
+
+  .section-label::before {
+    display: none !important;
+  }
+
+  .section-title,
+  .section-subtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Homepage About Preview */
+  .about-grid > div {
+    text-align: center;
+  }
+
+  .about-grid .btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Services Detail Cards */
+  .service-detail-card {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .service-detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-features {
+    align-items: center;
+    width: 100%;
+  }
+
+  .service-feature {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .service-detail-content > div[style*="display: flex"] {
+    justify-content: center !important;
+    width: 100%;
+  }
+
+  .service-areas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* About Page */
+  .about-content {
+    text-align: center;
+  }
+
+  .about-cta-btns {
+    justify-content: center;
+  }
+
+  .about-exp-badge {
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: -20px !important;
+    text-align: center;
+    width: max-content;
+    max-width: 90%;
+  }
+
+  /* Contact Page */
+  .contact-intro-col {
+    text-align: center;
+  }
+}
+
+/* 4. Mobile & Small Tablet Adjustments (<= 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .page-header {
+    height: 38vh;
+    min-height: 290px;
+  }
+
+  .page-header-content {
+    padding: 0 16px;
+  }
+
+  /* Quote Wizard on Mobile */
+  .wizard-container {
+    padding: 28px 16px;
+    border-radius: 22px;
+    margin-top: 28px;
+  }
+
+  .wizard-options.wizard-options-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .wizard-option-btn {
+    min-height: 76px;
+    padding: 12px 8px;
+  }
+
+  .wizard-option-label {
+    font-size: 0.85rem;
+  }
+
+  /* Service Cards on Homepage */
+  .service-card-body {
+    text-align: center;
+    padding: 24px 20px;
+  }
+
+  /* Venues Preview on Homepage */
+  .venues-grid .venue-showcase-content {
+    text-align: center;
+    align-items: center;
+    padding: 24px 20px;
+  }
+
+  .venues-grid .venue-features-list {
+    align-items: center;
+  }
+
+  .venues-grid .btn-sm {
+    align-self: center;
+  }
+
+  .venue-tag {
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  /* About Preview Image & Badge */
+  .about-image img {
+    height: 340px;
+  }
+
+  .about-image-accent {
+    display: none;
+  }
+
+  .about-floating-badge {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 16px;
+    width: max-content;
+    max-width: calc(100% - 24px);
+    animation: none;
+    justify-content: center;
+    text-align: left;
+  }
+
+  /* Venues Page (İşletmelerimiz) Centered Layout */
+  .venue-showcase-card {
+    margin-bottom: 45px;
+  }
+
+  .venue-hero-location {
+    top: 16px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  .venue-hero-overlay-content {
+    padding: 68px 18px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .venue-luxury-badge {
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  .venue-hero-subtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.98rem;
+  }
+
+  .venue-stats-strip {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  .venue-stat-box {
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .venue-stat-number {
+    font-size: 1.45rem;
+    margin-bottom: 4px;
+  }
+
+  .venue-stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.8px;
+  }
+
+  .venue-tags-row {
+    justify-content: center;
+  }
+
+  .venue-details-panel {
+    text-align: center;
+    padding: 26px 18px 28px;
+  }
+
+  .venue-description-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.98rem;
+  }
+
+  .venue-feature-item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Services Detail Page */
+  .service-detail-image img {
+    height: 280px;
+  }
+
+  .faq-question {
+    padding: 18px 20px;
+    font-size: 1.02rem;
+  }
+
+  .faq-answer,
+  .faq-item.active .faq-answer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* About Page */
+  .about-main-photo {
+    height: 340px !important;
+  }
+
+  .about-regions-box {
+    margin-top: 60px !important;
+    padding: 32px 18px !important;
+  }
+
+  /* Contact Page */
+  .contact-info-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 22px 18px;
+  }
+
+  .contact-direct-box {
+    padding: 28px 18px !important;
+    text-align: center;
+  }
+
+  .contact-direct-header {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact-map-header {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 24px 18px !important;
+  }
+
+  /* Legal Box */
+  .legal-box {
+    padding: 28px 20px;
+  }
+
+  /* Footer Centered on Mobile */
+  .footer-grid {
+    text-align: center;
+    gap: 32px;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin: 0 auto 1rem;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-contact-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+}
+
+/* 5. Small Phone Screens (<= 576px) */
+@media (max-width: 576px) {
+  .service-areas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wizard-submit-btn {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 0.94rem;
+  }
+
+  .hero-buttons .btn,
+  .cta-buttons .btn,
+  .about-cta-btns .btn,
+  .service-detail-content > div[style*="display: flex"] .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .venue-stats-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-stat-box {
+    padding: 12px 16px;
+  }
+
+  .region-pill {
+    padding: 7px 14px !important;
+    font-size: 0.82rem !important;
+  }
+}
+
+
 
 
 
