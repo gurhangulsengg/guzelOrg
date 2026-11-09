@@ -2,7 +2,7 @@ ErrorDocument 404 /404.html
 RewriteEngine On
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\. [NC]
-RewriteRule ^(.*)$ https://www.guzelorganizasyon.com/$1 [L,R=301]
+RewriteRule ^(.*)$ https://www.guzelorganizasyon.com.tr/$1 [L,R=301]
 RewriteRule ^hizmetler/?$ /hizmetler.html [R=301,L,NE]
 RewriteRule ^hakkimizda/?$ /hakkimizda.html [R=301,L,NE]
 RewriteRule ^iletisim/?$ /iletisim.html [R=301,L,NE]
