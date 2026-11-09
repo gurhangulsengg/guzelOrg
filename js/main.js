@@ -2,6 +2,14 @@
    Güzel Organizasyon - Main JavaScript
    ============================================ */
 
+// .com alan adından gelen ziyaretçileri otomatik .com.tr'ye yönlendir
+(function enforceCanonicalDomain() {
+  const host = window.location.hostname;
+  if (host === 'guzelorganizasyon.com' || host === 'www.guzelorganizasyon.com') {
+    window.location.replace('https://www.guzelorganizasyon.com.tr' + window.location.pathname + window.location.search + window.location.hash);
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   document.body.style.overflow = '';
   initLuxuryAmpersand();
