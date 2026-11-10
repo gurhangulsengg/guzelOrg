@@ -10,6 +10,18 @@
   }
 })();
 
+// Temiz URL yönetimi: index.html ve .html uzantılarını adres çubuğundan kaldır
+(function enforceCleanUrls() {
+  const path = window.location.pathname;
+  if (path.endsWith('/index.html') || path === '/index.html') {
+    const cleanPath = path.replace(/\/index\.html$/, '') || '/';
+    window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+  } else if (path.endsWith('.html')) {
+    const cleanPath = path.replace(/\.html$/, '');
+    window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   document.body.style.overflow = '';
   initLuxuryAmpersand();
